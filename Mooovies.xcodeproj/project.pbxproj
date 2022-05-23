@@ -11,6 +11,8 @@
 		03EEE935283BC10100DA5393 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEE934283BC10100DA5393 /* ContentView.swift */; };
 		03EEE937283BC10600DA5393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03EEE936283BC10600DA5393 /* Assets.xcassets */; };
 		03EEE93A283BC10600DA5393 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03EEE939283BC10600DA5393 /* Preview Assets.xcassets */; };
+		03EEE945283BC2B900DA5393 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEE944283BC2B900DA5393 /* Movies.swift */; };
+		03EEE948283BC71000DA5393 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEE947283BC71000DA5393 /* Downloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		03EEE934283BC10100DA5393 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		03EEE936283BC10600DA5393 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03EEE939283BC10600DA5393 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		03EEE944283BC2B900DA5393 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		03EEE947283BC71000DA5393 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,11 @@
 		03EEE931283BC10100DA5393 /* Mooovies */ = {
 			isa = PBXGroup;
 			children = (
-				03EEE932283BC10100DA5393 /* MoooviesApp.swift */,
-				03EEE934283BC10100DA5393 /* ContentView.swift */,
+				03EEE946283BC6E300DA5393 /* Service */,
+				03EEE943283BC19900DA5393 /* App */,
+				03EEE942283BC17100DA5393 /* ViewModel */,
+				03EEE941283BC15F00DA5393 /* View */,
+				03EEE940283BC15800DA5393 /* Model */,
 				03EEE936283BC10600DA5393 /* Assets.xcassets */,
 				03EEE938283BC10600DA5393 /* Preview Content */,
 			);
@@ -65,6 +72,45 @@
 				03EEE939283BC10600DA5393 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		03EEE940283BC15800DA5393 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				03EEE944283BC2B900DA5393 /* Movies.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		03EEE941283BC15F00DA5393 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03EEE934283BC10100DA5393 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03EEE942283BC17100DA5393 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		03EEE943283BC19900DA5393 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				03EEE932283BC10100DA5393 /* MoooviesApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		03EEE946283BC6E300DA5393 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				03EEE947283BC71000DA5393 /* Downloader.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +185,8 @@
 			files = (
 				03EEE935283BC10100DA5393 /* ContentView.swift in Sources */,
 				03EEE933283BC10100DA5393 /* MoooviesApp.swift in Sources */,
+				03EEE948283BC71000DA5393 /* Downloader.swift in Sources */,
+				03EEE945283BC2B900DA5393 /* Movies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
