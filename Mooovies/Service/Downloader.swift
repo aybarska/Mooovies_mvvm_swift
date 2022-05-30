@@ -10,7 +10,7 @@ import Foundation
 class Downloader {
     func DownloadMovie(search : String, completion : @escaping (Result<[Movie]?,DownloaderError>) -> Void ) {
         
-        guard let url = URL(string: "http://www.omdbapi.com/?apikey=c38cc4ed&s=\(search)") else {
+        guard let url = URL(string: "https://www.omdbapi.com/?apikey=c38cc4ed&s=\(search)") else {
             return completion(.failure(.wrongUrl))
         }
         
