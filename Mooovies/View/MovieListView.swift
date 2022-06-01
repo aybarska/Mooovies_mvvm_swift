@@ -9,13 +9,22 @@ import SwiftUI
 
 struct MovieListView: View {
     @ObservedObject var movieListViewModel : MovieListViewModel
+    @State var searchText = ""
+
     init() {
         self.movieListViewModel = MovieListViewModel()
-        self.movieListViewModel.doMovieSearch(movieName: "Dabbe")
+        
     }
-    
+        
     var body: some View {
         NavigationView{
+            VStack {
+            TextField("Search", text: $searchText) { _ in
+                
+            } onCommit: {
+                self.movieListViewModel.doMovieSearch(movieName: searchText)
+            }.padding()
+
             List(movieListViewModel.movies, id: \.imdbId ){ moovie in
                 HStack {
                     SpacialImage(url: moovie.poster)
@@ -29,9 +38,10 @@ struct MovieListView: View {
                     }
                     
                 }
-            }
-        }.navigationTitle(Text("Mooovies"))
-        
+            }.navigationTitle(Text("Mooovies")).listStyle(.plain)
+
+        }
+    }
     }
 }
 
