@@ -13,16 +13,18 @@ struct MovieListView: View {
 
     init() {
         self.movieListViewModel = MovieListViewModel()
-        
+        //UITableView.appearance().backgroundColor = .green // Uses UIColor
+
     }
         
     var body: some View {
+        
         NavigationView{
             VStack {
             TextField("Search", text: $searchText) { _ in
                 
             } onCommit: {
-                self.movieListViewModel.doMovieSearch(movieName: searchText)
+                self.movieListViewModel.doMovieSearch(movieName: searchText.trimmingCharacters(in: .whitespacesAndNewlines) .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? searchText)
             }.padding()
 
             List(movieListViewModel.movies, id: \.imdbId ){ moovie in
@@ -41,7 +43,9 @@ struct MovieListView: View {
             }.navigationTitle(Text("Mooovies")).listStyle(.plain)
 
         }
+      
     }
+        
     }
 }
 
