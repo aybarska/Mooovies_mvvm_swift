@@ -13,12 +13,8 @@ struct MovieListView: View {
 
     init() {
         self.movieListViewModel = MovieListViewModel()
-        //UITableView.appearance().backgroundColor = .green // Uses UIColor
     }
     @State private var isAnimating = false
-
-    let startGradient = Gradient(colors: [.blue, .yellow]) // Very popular these days
-    
     var body: some View {
         
         NavigationView{
@@ -32,26 +28,13 @@ struct MovieListView: View {
             }                .padding(7)
                     .background(Color(.systemGray5))
                     .cornerRadius(13)
-                    .padding(.horizontal, 15)//.textFieldStyle(.roundedBorder)
-
+                    .padding(.horizontal, 15)
             List(movieListViewModel.movies, id: \.imdbId ){ moovie in
                 NavigationLink(
                     destination: DetailView(imdbId:moovie.imdbId),
                     label: {
-                HStack {
-                    SpacialImage(url: moovie.poster)
-                        .frame(width: 100, height: 150)
-                    VStack(alignment:.leading) {
-                    Text(moovie.title)
-                            .font(.title3)
-                            .foregroundColor(.blue)
-                        Text(moovie.year)
-                            .foregroundColor(.gray)
 
-                    }
-                    
-                }//.listRowBackground(Color.clear)
-                        
+                        MoovieCard(poster: moovie.poster, title: moovie.title, year: moovie.year)
                     })
             }.navigationTitle(Text("Mooovies")).listStyle(.inset)
 
@@ -65,5 +48,28 @@ struct MovieListView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MovieListView()
+    }
+}
+
+struct MoovieCard: View {
+    var poster: String
+    var title: String
+    var year: String
+    
+    var body: some View {
+        HStack {
+            SpacialImage(url: poster)
+                .frame(width: 100, height: 150)
+            VStack(alignment:.leading) {
+            Text(title)
+                    .font(.title3)
+                    .foregroundColor(.blue)
+                Text(year)
+                    .foregroundColor(.gray)
+
+            }
+            
+        }
+        
     }
 }

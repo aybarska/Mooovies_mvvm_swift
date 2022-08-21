@@ -17,7 +17,7 @@ struct DetailView: View {
         VStack(alignment:.leading, spacing:5){
             HStack{
                 Spacer()
-                SpacialImage(url: filmDetayViewModel.movieDetail?.poster ?? "").frame(width: UIScreen.main.bounds.width * 0.6, height: UIScreen.main.bounds.height * 0.3, alignment: .center)
+                SpacialImage(url: filmDetayViewModel.movieDetail?.poster ?? "").frame(width: UIScreen.main.bounds.width * 0.6, height: UIScreen.main.bounds.height * 0.4, alignment: .center)
                 Spacer()
             }
             
@@ -38,11 +38,12 @@ struct DetailView: View {
         }.onAppear(perform: {
             self.filmDetayViewModel.getMovieDetails(imdbId: imdbId)
         })
+        
     }
 }
 
 struct DetayView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(imdbId: "test")
+        DetailView(imdbId: "tt2560140")
     }
 }
